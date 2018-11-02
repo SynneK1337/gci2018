@@ -34,5 +34,5 @@
   - name: Update linux-firmware to latest testing release
     dnf:
       name: linux-firmware
-      enablerepo:updates-testing
+      enablerepo: updates-testing
       state: present
