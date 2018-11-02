@@ -1,0 +1,38 @@
+---
+- name: install 3 packages
+  hosts: synnek-fedora  
+  become: yes
+  become_user: root
+  tasks:
+  - name: Add themes repo
+    command: "dnf copr enable -y tcg/themes"
+  - name: Install Papirus Icon Theme
+    dnf:
+      name: pop-icon-theme
+      state: latest
+
+  - name: Install Dark OSX Arc GTK Theme
+    dnf:
+      name: OSX-Arc-Darker-theme
+      state: latest
+
+  - name: Install White OSX Arc GTK THeme
+    dnf:
+      name: OSX-Arc-White-theme
+      state: latest
+  - name: Update Kernel to the testing release
+    dnf:
+      name: kernel
+      enablerepo: updates-testing
+      state: present
+  - name: Update git to latest testing release
+    dnf:
+      name: git
+      enablerepo: updates-testing
+      state: present
+
+  - name: Update linux-firmware to latest testing release
+    dnf:
+      name: linux-firmware
+      enablerepo: updates-testing
+      state: present
