@@ -1,0 +1,19 @@
+---
+# This file is an example file for yaml_parser.py
+Age: 14
+Name: "SynneK1337"
+multi-line_string: |
+  This
+  is
+  multi
+  line
+  string
+# To end multi-line string create a new variable without indention
+ml_string_ended: true
+shop_list:
+    - milk
+    - bread
+    - crisps
+    # You can create a key inside list
+    - price: 21.37
+    - baguettes: 3
